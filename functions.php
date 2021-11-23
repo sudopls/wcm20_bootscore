@@ -10,7 +10,7 @@
 
 
 // WooCommerce
-//require get_template_directory() . '/woocommerce/woocommerce-functions.php';
+require get_template_directory() . '/woocommerce/woocommerce-functions.php';
 // WooCommerce END
 
 
@@ -365,7 +365,7 @@ if (!function_exists('bootscore_pagination')) :
       echo '</ul>';
       echo '</nav>';
       // Uncomment this if you want to show [Page 2 of 30]
-      // echo '<div class="pagination-info mb-5 text-center">[ <span class="text-muted">Page</span> '.$paged.' <span class="text-muted">of</span> '.$pages.' ]</div>';	 	
+      // echo '<div class="pagination-info mb-5 text-center">[ <span class="text-muted">Page</span> '.$paged.' <span class="text-muted">of</span> '.$pages.' ]</div>';
     }
   }
 
@@ -414,7 +414,7 @@ endif;
 
 // Comment Button
 function bootscore_comment_form($args) {
-  $args['class_submit'] = 'btn btn-outline-primary'; // since WP 4.1    
+  $args['class_submit'] = 'btn btn-outline-primary'; // since WP 4.1
   return $args;
 }
 add_filter('comment_form_defaults', 'bootscore_comment_form');

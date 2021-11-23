@@ -1,5 +1,5 @@
 /*
-Theme Name: bootScore
+Theme Name: WCM20 Bootscore
 Theme URI: https://bootscore.me/
 Author: bootScore
 Author URI: https://bootscore.me
@@ -43,7 +43,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 1. Temporary
 --------------------------------------------------------------*/
 
-/* scroll-behaviour: smooth not supportet by Safari. 
+/* scroll-behaviour: smooth not supportet by Safari.
 jQuery smooth scroll script will be removed when Safari supports it */
 html {
   scroll-behavior: auto !important;
@@ -336,8 +336,8 @@ ul.comment-list li {
   margin-left: 1rem;
 }
 
-/* 
-    Adding width to comment. 
+/*
+    Adding width to comment.
     When using <pre> in comment, comment-content will not crashed
 */
 
@@ -410,8 +410,8 @@ ul.comment-list li {
 11. Utilities
 --------------------------------------------------------------*/
 
-/* 
-Add width-100 class to element to stretch it to the entire width 
+/*
+Add width-100 class to element to stretch it to the entire width
 of the screen when element is in .container.
 https://bootscore.me/documentation/width-height-classes/
 */
@@ -429,15 +429,15 @@ body {
   left: 50%;
 }
 
-/* 
-Hide racaptcha v3 badge 
+/*
+Hide racaptcha v3 badge
 */
 
 .grecaptcha-badge {
   display: none !important;
 }
 
-/* 
+/*
 Clear
 */
 
@@ -445,7 +445,7 @@ Clear
   clear: both;
 }
 
-/* 
+/*
 z-index
 */
 
@@ -498,8 +498,8 @@ Focus
   outline: 0 !important;
 }
 
-/* 
-Hover 
+/*
+Hover
 */
 
 .hover {
