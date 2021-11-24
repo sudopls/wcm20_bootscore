@@ -478,3 +478,25 @@ add_filter('gutenberg_use_widgets_block_editor', '__return_false');
 // Disables the block editor from managing widgets.
 add_filter('use_widgets_block_editor', '__return_false');
 // Disable Gutenberg blocks in widgets (WordPress 5.8) END
+
+add_action( 'woocommerce_account_content', 'show_account_content');
+
+// Show user action hook
+// function show_account_content() {
+//   $user_id = get_current_user_id();
+
+//   print_r(get_customer($user_id));
+
+//   print_r($user->display_name);
+// }
+
+// Change number of products for shop page
+if (! function_exists('products_fp')) {
+  function products_fp() {
+    $products_per_page = 1;
+    return $products_per_page;
+  }
+  add_filter('loop_shop_per_page', 'products_fp', 20);
+}
+
+require_once( get_template_directory() . '/inc/custom-ajax-auth.php');
