@@ -56,17 +56,18 @@ jQuery(document).ready(function($) {
         e.preventDefault();
     });
 
-    $("form#login").validate({
-        rules: {
-            username: "required",
-            password: "required"
-        },
-        messages: {
-            username: "Pls type your username here",
-            password: "<h1>Password is REQUIRED!!!!!!</h1>"
-        },
-        submitHandler: function(form) {
-            form.submit();
-        }
-    });
+    // Frontend validering med jQuery validate
+    // $("form#login").validate({
+    //     rules: {
+    //         username: "required",
+    //         password: "required"
+    //     },
+    //     messages: {
+    //         username: "Pls type your username here",
+    //         password: "<h1>Password is REQUIRED!!!!!!</h1>"
+    //     },
+    //     submitHandler: function(form) {
+    //         form.submit();
+    //     }
+    // });
 });
