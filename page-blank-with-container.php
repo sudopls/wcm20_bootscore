@@ -10,9 +10,13 @@
 
 get_header();
 ?>
+
+<!-- example react component -->
+<div id="render-react-example-here"></div>
+<!-- end example react component -->
 <div id="content" class="site-content container">
   <div id="primary" class="content-area">
-    
+
     <!-- Hook to add something nice -->
     <?php bs_after_primary(); ?>
 

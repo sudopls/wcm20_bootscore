@@ -1,0 +1,23 @@
+{
+  "name": "wcm20_bootscore",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">  <img src=\"https://raw.githubusercontent.com/craftwerkberlin/bootscore-5/main/img/logo/logo.svg\" height=\"50\"> </div>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudopls/wcm20_bootscore.git"
+  },
+  "author": "Fredrik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudopls/wcm20_bootscore/issues"
+  },
+  "homepage": "https://github.com/sudopls/wcm20_bootscore#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^6.2.0"
+  }
+}

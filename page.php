@@ -16,7 +16,9 @@
 get_header();
 ?>
 
-
+<!-- example react component -->
+<div id="render-react-example-here"></div>
+<!-- end example react component -->
 
 
 <div id="content" class="site-content container py-5 mt-5">
