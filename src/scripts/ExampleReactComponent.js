@@ -1,4 +1,4 @@
-wp.blocks.registerBlockType("test/test-name", {
+wp.blocks.registerBlockType("test/my-first-block", {
     title: "Testblock",
     icon: "dashicons-admin-user",
     category: "common",
