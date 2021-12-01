@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/sudopls/wcm20_bootscore#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@wordpress/element": "^4.0.4",
     "@wordpress/scripts": "^6.2.0"
   },

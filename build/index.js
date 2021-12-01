@@ -95,70 +95,80 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
-
+/* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/FirstBlock */ "./src/scripts/FirstBlock.js");
+/* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__);
+// import "./scripts/ExampleReactComponent";
  // Get WordPress libraries from wp global
 
 var __ = wp.i18n.__;
-var registerBlockType = wp.blocks.registerBlockType;
-registerBlockType('test/my-first-block', {
-  title: 'Test Block',
-  icon: 'dashicons-admin-users',
-  category: 'layout',
-  edit: function edit() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hi!");
-  },
-  save: function save() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hi!");
-  }
-});
+var registerBlockType = wp.blocks.registerBlockType; // registerBlockType('test/my-first-block', {
+//     title: 'Test Block',
+//     icon: 'dashicons-admin-users',
+//     category: 'layout',
+//     edit: () => <div>Hi!</div>,
+//     save: () => <div>Hi!</div>
+// });
 
 /***/ }),
 
-/***/ "./src/scripts/ExampleReactComponent.js":
-/*!**********************************************!*\
-  !*** ./src/scripts/ExampleReactComponent.js ***!
-  \**********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-wp.blocks.registerBlockType("test/my-first-block", {
-  title: "Testblock",
-  icon: "dashicons-admin-user",
-  category: "common",
-  attributes: {
-    skyColor: {
-      type: "string"
-    },
-    grassColor: {
-      type: "string"
-    }
-  },
-  edit: function edit() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hi!");
-  },
-  save: function save() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hi, this block is saved!");
-  }
-});
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
+/***/ "./src/scripts/FirstBlock.js":
+/*!***********************************!*\
+  !*** ./src/scripts/FirstBlock.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = window["wp"]["element"]; }());
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$components = wp.components,
+    TextControl = _wp$components.TextControl,
+    TextareaControl = _wp$components.TextareaControl;
+var RichText = wp.editor.RichText;
+registerBlockType('wcms20/firstblock', {
+  title: 'My First Block',
+  category: 'layout',
+  icon: 'smiley',
+  description: 'Our very first block',
+  attributes: {
+    exampleText: {
+      type: 'string',
+      "default": 'Example Text'
+    },
+    myRichText: {
+      // type: 'string',
+      source: 'html',
+      "default": 'My Richie Rich text'
+    }
+  },
+  edit: function edit(props) {
+    console.log(props);
+    var attributes = props.attributes,
+        setAttributes = props.setAttributes;
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(TextControl, {
+      tagName: "h2",
+      value: attributes.exampleText,
+      onChange: function onChange(newtext) {
+        return setAttributes({
+          exampleText: newtext
+        });
+      }
+    }), /*#__PURE__*/React.createElement(RichText, {
+      tagName: "h2",
+      value: attributes.myRichText,
+      onChange: function onChange(newtext) {
+        return setAttributes({
+          myRichText: newtext
+        });
+      }
+    }));
+  },
+  save: function save(props) {
+    var attributes = props.attributes;
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(RichText.Content, {
+      tagName: "h2",
+      value: attributes.myRichText
+    }));
+  }
+});
 
 /***/ })
 

@@ -500,15 +500,29 @@ if (! function_exists('products_fp')) {
 
 require_once( get_template_directory() . '/inc/custom-ajax-auth.php');
 
-// Load custom Gutenberg blocks
-function load_custom_blocks() {
-  wp_enqueue_script('myfirstblock', get_theme_file_uri('/build/index.js'), array('wp-blocks', 'wp-element', 'wp-editor'));
+// // Load custom Gutenberg blocks
+// function load_custom_blocks() {
+//   // Our first block
+//   wp_register_script('wcms20-firstblock-js', get_template_directory_uri() . '/build/index.js');
 
-  register_block_type('test/my-first-block', array(
-    'editor_script' => 'myfirstblock',
-  ));
-}
+//   register_block_type('wcms20/firstblock', [
+//     'editor_script' => 'wcms20-firstblock-js',
+//   ]);
+// }
 
-add_action('init', 'load_custom_blocks');
+// add_action('init', 'load_custom_blocks');
 
+// add_action('init', function() {
+//   wp_register_script('wcm20-firstblock-js', get_template_directory_uri() . '/build/index.js');
 
+//   register_block_type('wcms20/firstblock', [
+//     'editor_script' => 'wcms20-firstblock-js',
+//   ]);
+// });
+
+add_action( 'init', function(){
+  wp_register_script('wcm20-myfirstblock-js', get_template_directory_uri() . '/build/index.js', ['wp-blocks', 'wp-components', 'wp-editor']);
+  register_block_type('wcms20/firstblock', [
+    'editor_script' => 'wcm20-myfirstblock-js',
+  ]);
+});
