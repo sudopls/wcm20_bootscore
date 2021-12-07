@@ -86,6 +86,69 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/google-maps-block/index.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/google-maps-block/index.js ***!
+  \***********************************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+var BLOCK_NAME = 'wcms-maps/google-map';
+
+var BLOCK_TITLE = wp.i18n._x('Google Map', 'wcms20-blocks', 'wcms-maps');
+
+var BLOCK_DESCRIPTION = wp.i18n._x('Add a nice map!', 'wcms20-blocks', 'wcms-maps'); // Internal dependencies
+
+
+var name = BLOCK_NAME;
+var settings = {
+  title: BLOCK_TITLE,
+  description: BLOCK_DESCRIPTION,
+  icon: 'heart',
+  category: 'layout',
+  keywords: [_x('Location', 'wcms20-blocks', 'wcms-maps')],
+  attributes: attributes,
+  edit: GoogleMapEdit,
+  save: GoogleMapSave
+};
+
+/***/ }),
+
+/***/ "./src/blocks/index.js":
+/*!*****************************!*\
+  !*** ./src/blocks/index.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _google_maps_block__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./google-maps-block */ "./src/blocks/google-maps-block/index.js");
+/*
+* Import the blocks.
+*/
+
+var _wp$blocks = wp.blocks,
+    registerBlockType = _wp$blocks.registerBlockType,
+    registerBlockStyle = _wp$blocks.registerBlockStyle;
+[_google_maps_block__WEBPACK_IMPORTED_MODULE_1__ // Add more custom blocks here
+].forEach(function (block) {
+  if (!block) {
+    return;
+  } // Register block in the editor
+
+
+  var name = block.name,
+      settings = block.settings;
+  registerBlockType(name, settings);
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -96,17 +159,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/FirstBlock */ "./src/scripts/FirstBlock.js");
-// import "./scripts/ExampleReactComponent";
- // Get WordPress libraries from wp global
+/* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks */ "./src/blocks/index.js");
 
-var __ = wp.i18n.__;
-var registerBlockType = wp.blocks.registerBlockType; // registerBlockType('test/my-first-block', {
-//     title: 'Test Block',
-//     icon: 'dashicons-admin-users',
-//     category: 'layout',
-//     edit: () => <div>Hi!</div>,
-//     save: () => <div>Hi!</div>
-// });
+
 
 /***/ }),
 
@@ -114,13 +170,8 @@ var registerBlockType = wp.blocks.registerBlockType; // registerBlockType('test/
 /*!***********************************!*\
   !*** ./src/scripts/FirstBlock.js ***!
   \***********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$components = wp.components,
@@ -135,19 +186,19 @@ registerBlockType('wcms20/firstblock', {
   attributes: {
     exampleText: {
       type: 'string',
-      default: 'Example Text'
+      "default": 'Example Text'
     },
     myRichText: {
       // type: 'string',
       source: 'html',
-      default: 'My Richie Rich text'
+      "default": 'My Richie Rich text'
     }
   },
   edit: function edit(props) {
     console.log(props);
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(TextControl, {
       tagName: "h2",
       value: attributes.exampleText,
       onChange: function onChange(newtext) {
@@ -155,7 +206,7 @@ registerBlockType('wcms20/firstblock', {
           exampleText: newtext
         });
       }
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+    }), /*#__PURE__*/React.createElement(RichText, {
       tagName: "h2",
       value: attributes.myRichText,
       onChange: function onChange(newtext) {
@@ -167,23 +218,12 @@ registerBlockType('wcms20/firstblock', {
   },
   save: function save(props) {
     var attributes = props.attributes;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(RichText.Content, {
       tagName: "h2",
       value: attributes.myRichText
     }));
   }
 });
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = window["wp"]["element"]; }());
 
 /***/ })
 
