@@ -23,7 +23,9 @@
     "@babel/preset-react": "^7.16.0",
     "@wordpress/element": "^4.0.4",
     "@wordpress/scripts": "^6.2.0",
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "react-google-maps": "^9.4.5",
+    "recompose": "^0.30.0"
   },
   "dependencies": {
     "abab": "^2.0.5",
