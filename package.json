@@ -230,6 +230,7 @@
     "domhandler": "^4.2.2",
     "domutils": "^2.8.0",
     "dot-prop": "^5.3.0",
+    "dotenv": "^10.0.0",
     "duplexer": "^0.1.2",
     "duplexify": "^3.7.1",
     "ecc-jsbn": "^0.1.2",

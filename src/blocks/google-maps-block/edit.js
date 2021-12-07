@@ -21,7 +21,7 @@ import { debounce } from 'lodash';
 import Inspector from './inspector';
 import MapBlock from './map-block';
 
-const googleMapsApiKey = 'AIzaSyD98FUDbAqqfAuEpM0fxgfXVd779jDgKCs';
+// const googleMapsApiKey = process.env.GMAPS_API_KEY;
 const GOOGLE_MAPS_URL = 'https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing,places';
 
 // Build map here
