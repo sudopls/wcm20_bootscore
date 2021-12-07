@@ -3,6 +3,8 @@ const BLOCK_TITLE = wp.i18n._x( 'Google Map', 'wcms20-blocks', 'wcms-maps' );
 const BLOCK_DESCRIPTION = wp.i18n._x( 'Add a nice map!', 'wcms20-blocks', 'wcms-maps' );
 
 // Internal dependencies
+import GoogleMapEdit from './edit';
+import attributes from './attributes';
 
 export const name = BLOCK_NAME;
 export const settings = {
@@ -10,11 +12,8 @@ export const settings = {
     description: BLOCK_DESCRIPTION,
     icon: 'heart',
     category: 'layout',
-    keywords: [
-        _x( 'Location', 'wcms20-blocks', 'wcms-maps'),
-    ],
 
     attributes,
     edit: GoogleMapEdit,
-    save: GoogleMapSave,
+    // save: GoogleMapSave,
 };

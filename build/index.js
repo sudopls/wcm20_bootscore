@@ -86,6 +86,36 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/google-maps-block/attributes.js":
+/*!****************************************************!*\
+  !*** ./src/blocks/google-maps-block/attributes.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var attributes = {
+  zoom: {
+    type: 'number',
+    "default": 0
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (attributes);
+
+/***/ }),
+
+/***/ "./src/blocks/google-maps-block/edit.js":
+/*!**********************************************!*\
+  !*** ./src/blocks/google-maps-block/edit.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/src/blocks/google-maps-block/edit.js: 'Const declarations' require an initialization value. (32:9)\n\n\u001b[0m \u001b[90m 30 |\u001b[39m             }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 31 |\u001b[39m             \u001b[90m// setAttributes,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 33 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m         \u001b[90m// const options = {\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m         \u001b[90m//     zoomControl: true,\u001b[39m\u001b[0m\n    at Object._raise (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:541:17)\n    at Object.raiseWithData (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:534:17)\n    at Object.raise (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:495:17)\n    at Object.parseVar (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14026:18)\n    at Object.parseVarStatement (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13836:10)\n    at Object.parseStatementContent (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13421:21)\n    at Object.parseStatement (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13352:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13941:25)\n    at Object.parseBlockBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13932:10)\n    at Object.parseBlock (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13916:10)\n    at Object.parseFunctionBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:12786:24)\n    at Object.parseFunctionBodyAndFinish (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:12770:10)\n    at Object.parseMethod (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:12720:10)\n    at Object.pushClassMethod (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14393:30)\n    at Object.parseClassMemberWithIsStatic (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14278:12)\n    at Object.parseClassMember (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14215:10)\n    at /Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14159:14\n    at Object.withSmartMixTopicForbiddingContext (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13108:14)\n    at Object.parseClassBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14136:10)\n    at Object.parseClass (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14110:22)\n    at Object.parseExportDefaultExpression (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14576:19)\n    at Object.parseExport (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:14486:31)\n    at Object.parseStatementContent (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13460:27)\n    at Object.parseStatement (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13352:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13941:25)\n    at Object.parseBlockBody (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13932:10)\n    at Object.parseProgram (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13272:10)\n    at Object.parseTopLevel (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:13263:25)\n    at Object.parse (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:15037:10)\n    at parse (/Users/fl/web/cms-projekt.test/wp-content/themes/wcm20_bootscore/node_modules/@babel/parser/lib/index.js:15089:38)");
+
+/***/ }),
+
 /***/ "./src/blocks/google-maps-block/index.js":
 /*!***********************************************!*\
   !*** ./src/blocks/google-maps-block/index.js ***!
@@ -97,11 +127,15 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/google-maps-block/edit.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/blocks/google-maps-block/attributes.js");
 var BLOCK_NAME = 'wcms-maps/google-map';
 
 var BLOCK_TITLE = wp.i18n._x('Google Map', 'wcms20-blocks', 'wcms-maps');
 
 var BLOCK_DESCRIPTION = wp.i18n._x('Add a nice map!', 'wcms20-blocks', 'wcms-maps'); // Internal dependencies
+
+
 
 
 var name = BLOCK_NAME;
@@ -110,10 +144,9 @@ var settings = {
   description: BLOCK_DESCRIPTION,
   icon: 'heart',
   category: 'layout',
-  keywords: [_x('Location', 'wcms20-blocks', 'wcms-maps')],
-  attributes: attributes,
-  edit: GoogleMapEdit,
-  save: GoogleMapSave
+  attributes: _attributes__WEBPACK_IMPORTED_MODULE_1__["default"],
+  edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"] // save: GoogleMapSave,
+
 };
 
 /***/ }),
