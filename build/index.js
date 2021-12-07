@@ -96,7 +96,6 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/FirstBlock */ "./src/scripts/FirstBlock.js");
-/* harmony import */ var _scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scripts_FirstBlock__WEBPACK_IMPORTED_MODULE_0__);
 // import "./scripts/ExampleReactComponent";
  // Get WordPress libraries from wp global
 
@@ -115,8 +114,13 @@ var registerBlockType = wp.blocks.registerBlockType; // registerBlockType('test/
 /*!***********************************!*\
   !*** ./src/scripts/FirstBlock.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$components = wp.components,
@@ -131,19 +135,19 @@ registerBlockType('wcms20/firstblock', {
   attributes: {
     exampleText: {
       type: 'string',
-      "default": 'Example Text'
+      default: 'Example Text'
     },
     myRichText: {
       // type: 'string',
       source: 'html',
-      "default": 'My Richie Rich text'
+      default: 'My Richie Rich text'
     }
   },
   edit: function edit(props) {
     console.log(props);
     var attributes = props.attributes,
         setAttributes = props.setAttributes;
-    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(TextControl, {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
       tagName: "h2",
       value: attributes.exampleText,
       onChange: function onChange(newtext) {
@@ -151,7 +155,7 @@ registerBlockType('wcms20/firstblock', {
           exampleText: newtext
         });
       }
-    }), /*#__PURE__*/React.createElement(RichText, {
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
       tagName: "h2",
       value: attributes.myRichText,
       onChange: function onChange(newtext) {
@@ -163,12 +167,23 @@ registerBlockType('wcms20/firstblock', {
   },
   save: function save(props) {
     var attributes = props.attributes;
-    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(RichText.Content, {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
       tagName: "h2",
       value: attributes.myRichText
     }));
   }
 });
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["element"]; }());
 
 /***/ })
 
