@@ -28,5 +28,10 @@
     <label for="password2">Confirm Password</label>
     <input type="password" name="password2" id="password2" class="required">
     <input type="submit" value="SIGNUP">
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status">
+    </div>
     <a href="" class="close">Close</a>
 </form>

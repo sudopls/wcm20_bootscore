@@ -526,3 +526,7 @@ add_action( 'init', function(){
     'editor_script' => 'wcm20-myfirstblock-js',
   ]);
 });
+
+add_action( 'init', function(){
+  wp_enqueue_script('wcms20-facebook-sdk', get_template_directory_uri() . '/js/facebook-sdk.js', ['jquery']);
+});
