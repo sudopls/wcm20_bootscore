@@ -498,6 +498,8 @@ if (! function_exists('products_fp')) {
   add_filter('loop_shop_per_page', 'products_fp', 20);
 }
 
+require_once(get_template_directory() . '/options.php');
+
 require_once( get_template_directory() . '/inc/custom-ajax-auth.php');
 
 // // Load custom Gutenberg blocks
@@ -526,3 +528,43 @@ add_action( 'init', function(){
     'editor_script' => 'wcm20-myfirstblock-js',
   ]);
 });
+
+// Hide default login
+add_action('init', 'hide_login');
+
+function hide_login() {
+  if ( ! is_user_logged_in() ) {
+    // Get current URL
+    $current_url = str_replace('/', '', $_SERVER['REQUEST_URI'] );
+    // Add URL Endpoint for new admin url
+    $hiddenWpAdmin = 'new-secret-url';
+
+    // Check if current URL is correct admin URL
+    if ( $current_url == $hiddenWpAdmin ) {
+      // Redirect user to new login file
+      wp_redirect( '/'.$hiddenWpAdmin.'.php');
+      exit;
+    }
+
+    $notAccessable = [
+      'wp-admin',
+      'wp-login.php'
+    ];
+
+    if ( in_array( $current_url, $notAccessable) && $_GET['action'] !== "logout") {
+      wp_redirect('/404');
+      exit;
+    }
+  }
+}
+
+$options = get_option('my_option_name');
+
+$title = $options['title'];
+
+$my_id = $options['id_number'];
+
+print_r(get_option('my_option_name'));
+
+print_r($title);
+
