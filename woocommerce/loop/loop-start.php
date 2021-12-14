@@ -21,5 +21,5 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="row">
+<div id="showPosts" class="row">
   <!-- End in loop-end.php -->

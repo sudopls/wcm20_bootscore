@@ -557,14 +557,69 @@ function hide_login() {
     }
   }
 }
+// Here we get value of theme options
+// $options = get_option('my_option_name');
 
-$options = get_option('my_option_name');
+// $title = $options['title'];
 
-$title = $options['title'];
+// $my_id = $options['id_number'];
 
-$my_id = $options['id_number'];
+// print_r(get_option('my_option_name'));
 
-print_r(get_option('my_option_name'));
+// print_r($title);
 
-print_r($title);
+// Enqueue ajax pagination scripts
+function wcms_ajax_scripts() {
+  wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/js/ajax-pagination.js', array('jquery'), '1.0', true);
+
+  global $wp_query;
+  wp_localize_script('ajax-pagination', 'ajaxpagination', array(
+    'ajaxurl' => admin_url('admin-ajax.php'),
+    'query_vars' => json_encode( $wp_query->query )
+  ));
+}
+
+add_action('init', 'wcms_ajax_scripts');
+
+// Set up PHP action for AJAX call
+add_action('wp_ajax_nopriv_ajax_pagination', 'my_ajax_pagination');
+add_action('wp_ajax_ajax_pagination', 'my_ajax_pagination');
+
+function my_ajax_pagination() {
+  global $wp_query;
+
+
+  $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true);
+
+  $pagez = $_POST['page'];
+
+
+  $args = array(
+    'post_type'       =>  'product',
+    'posts_per_page'  =>  24,
+    'paged'           =>  $pagez,
+    'orderby'         =>  'title',
+    'order'           =>  'ASC',
+  );
+
+  $posts = new WP_Query( $args );
+  $GLOBALS['wp_query'] = $posts;
+
+  // print_r($posts);
+  $count = 0;
+
+  // IF there's no posts
+  if( ! $posts->have_posts() ) {
+    get_template_part( 'content', 'none' );
+    echo "we have no posts";
+  }
+  // IF there's posts
+  else {
+    while ( $posts->have_posts() ) {
+      $posts->the_post();
+      get_template_part( 'woocommerce/content', 'product');
+    }
+  }
+  die();
+}
 
