@@ -41,14 +41,48 @@ jQuery(document).ready(function($) {
         //     'Thanks for logging in, ' + response.name + '!';
         userEmail = response.email;
         userName = response.name;
+        accessToken = response.accessToken;
+        security = $('form#login #security').val();
         const fbUser = {
             email: userEmail,
             name: userName,
+            auth_token: accessToken,
+            security: security,
         };
         // Prepare form before submit
         console.log("Logged in user object: " + fbUser.name);
-        $('form#login #username').val(fbUser.email);
+        // $('form#login #username').val(fbUser.email);
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: ajax_auth_object.ajaxurl,
+            data: {
+                'action': 'ajax_fb_login', //calls wp_ajax_nopriv_ajaxlogin
+                'email': fbUser.email,
+                'auth_token': fbUser.accessToken,
+                'security': fbUser.security,
+            },
+            success: function(data) {
+                // $('p.status').show().text(data.message);
+                console.log(data);
+                if (data.loggedin == true){
+                    document.location.href = ajax_fb_auth_object.redirecturl;
+                }
+            },
+            // error: function (xhr, ajaxOptions, thrownError) {
+            //     // console.log(xhr.status);
+            //     // console.log(thrownError.message);
+            //     console.log(thrownError);
+            //     console.log(xhr);
+            //     console.log("error");
+
+            //     $('p.status', this).show().text(xhr.message);
+            // },
         });
+        });
+        console.log('after response');
+
       }
 
     $('#fb_login').on('click', function(e) {
@@ -62,7 +96,6 @@ jQuery(document).ready(function($) {
         e.preventDefault();
     });
 
-    checkLoginState();
 
       /* END of Facebook login */
 
@@ -72,6 +105,7 @@ jQuery(document).ready(function($) {
         if($(this).attr('id') == 'show_login') {
             $('form#login').fadeIn(500);
             $('form#register').fadeOut(500);
+            checkLoginState();
         } else {
             $('form#register').fadeIn(500);
             $('form#login').fadeOut(500);

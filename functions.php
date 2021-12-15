@@ -500,6 +500,8 @@ if (! function_exists('products_fp')) {
 
 require_once( get_template_directory() . '/inc/custom-ajax-auth.php');
 
+require_once( get_template_directory() . '/inc/custom-ajax-fb-login.php');
+
 // // Load custom Gutenberg blocks
 // function load_custom_blocks() {
 //   // Our first block
