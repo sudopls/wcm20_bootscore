@@ -12,7 +12,7 @@
 
     <a class="close" href="">Close</a>
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    <fb:login-button scope="public_profile,email" onClick="checkLoginState();">
     </fb:login-button>
 </form>
 

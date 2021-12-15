@@ -39,8 +39,9 @@ function fb_auth_login($user_email, $auth_token) {
         wp_clear_auth_cookie();
         wp_set_current_user ( $user->ID );
         wp_set_auth_cookie ( $user->ID );
+        echo json_encode(array('loggedin'=>true));
     }   else    {
-        // echo "ERROR!!!11";
+        echo json_encode(array('loggedin'=>false));
         exit();
     }
 exit();
