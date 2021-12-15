@@ -11,10 +11,14 @@
     <input type="submit" value="LOGIN">
 
     <a class="close" href="">Close</a>
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
 </form>
 
 <form action="register" id="register" method="post">
     <h3>Already signed up? <a id="pop_login" href="">Login</a></h3>
+    <h3>Login with fb <a id="fb_login" href="">Fejsbok</a></h3>
     <h2>Signup</h2>
 
     <p class="status"></p>
